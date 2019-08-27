@@ -16,6 +16,8 @@ And some commands in automatic way to do its job i hope you like my tool.
 ## Preview
 [![zarch.png](https://i.postimg.cc/KjzFsYzW/zarch.png)](https://postimg.cc/8Jqq7NLd)
 
+[![Linux-2019-08-27-16-41-52.png](https://i.postimg.cc/hv3w1fsP/Linux-2019-08-27-16-41-52.png)](https://postimg.cc/dZr4qQgz)
+
 ### Features
 
 Install the necessary software
