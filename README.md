@@ -26,7 +26,7 @@ Install the necessary software
 
 ## Here is how to make the script works
 
-* Copy HT-WPS-Breaker.zip to Desktop .
+* Copy zarch.zip to Desktop .
 * Open The Terminal .
 * Type the following commands :
 
