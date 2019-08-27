@@ -17,20 +17,20 @@ and some commands in automatic way to do its job i hope you like my tool.
 
 Install the necessary software
 
-    * Text Editors
-    * FTP/Torrent Applications
-    * Download Managers
-    * Network managers
-    * VPN clients
-    * Chat Applications
-    * Image Editors
-    * Video editors/Record
-    * Archive Handlers
-    * Audio Applications
-    * Other Applications
-    * Development Environments
-    * Browser/Web Plugins
-    * System Tools Apps
+    * "Text Editors"
+    * "FTP/Torrent Applications"
+    * "Download Managers"
+    * "Network managers"
+    * "VPN clients"
+    * "Chat Applications"
+    * "Image Editors"
+    * "Video editors/Record"
+    * "Archive Handlers"
+    * "Audio Applications"
+    * "Other Applications"
+    * "Development Environments"
+    * "Browser/Web Plugins"
+    * "System Tools Apps"
 
 and more, comming soon...
 
