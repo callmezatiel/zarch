@@ -1,4 +1,5 @@
 # zarch
 The Ultimate Script For Arch Linux / Reborn OS
 
-https://github.com/callmezatiel/zarch/blob/master/zarch.png?raw=true
+[![zarch.png](https://i.postimg.cc/KjzFsYzW/zarch.png)](https://postimg.cc/8Jqq7NLd)
+
