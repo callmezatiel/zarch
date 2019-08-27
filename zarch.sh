@@ -1,16 +1,4 @@
 #!/bin/bash
-#Let's Begin ::
-##########################################################
-#                 Zarch script                           #
-#  ArchLinux Applications Automatic Installation Script  #
-##########################################################
-#  +FIRST  : sudo chmod +x Zarch.sh                      #
-#           (Give EXEC Access To Script)                 #
-#  +TO RUN    : sudo ./Zarch.sh                          #
-##########################################################
-
-
-
 
 # Variables
 # Regular Colors
@@ -63,7 +51,6 @@ if [ ! -e "/usr/bin/Zarch" ];then
 		sleep 1
     echo "You can run the script anytime by typing 'zarch' on the Terminal"
     sleep 2
-		ArchI0
 		exit 1
 	else
 		echo -e "\e[32m[-] Ok,maybe later !\e[0m"
