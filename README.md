@@ -4,11 +4,14 @@
 
 Install the necessary software
 
+Dependencies
+
+* "Archlinux"
 * "yay"
 * "git"
 * "wget"
 
-and some commands in automatic way to do its job i hope you like my tool.
+And some commands in automatic way to do its job i hope you like my tool.
 
 ## Preview
 [![zarch.png](https://i.postimg.cc/KjzFsYzW/zarch.png)](https://postimg.cc/8Jqq7NLd)
@@ -36,9 +39,11 @@ and more, comming soon...
 
 ## Video
 
-* [New Video]()
+* [New Video](https://youtu.be/yiPsz-suvcc)
 
 ## Here is how to make the script works
+
+# Install
 
 * Copy zarch.zip to Desktop .
 * Open The Terminal .
