@@ -1,4 +1,4 @@
-# Zarch
+# Zarch BETA
 
 [ Languages: [English](README.md) ]
 
@@ -17,8 +17,22 @@ and some commands in automatic way to do its job i hope you like my tool.
 
 Install the necessary software
 
-* Devoleper tools
-* Web Browsers
+    * Text Editors
+    * FTP/Torrent Applications
+    * Download Managers
+    * Network managers
+    * VPN clients
+    * Chat Applications
+    * Image Editors
+    * Video editors/Record
+    * Archive Handlers
+    * Audio Applications
+    * Other Applications
+    * Development Environments
+    * Browser/Web Plugins
+    * System Tools Apps
+
+and more, comming soon...
 
 ## Video
 
