@@ -6,7 +6,7 @@ Install the necessary software
 
 Dependencies
 
-* "Archlinux"
+* "Arch linux"
 * "yay"
 * "git"
 * "wget"
