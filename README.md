@@ -1,6 +1,6 @@
 # Sarch BETA
 
-[ Languages: [English](README.md) ]
+[ Languages: [Spanish](README.md) ]
 
 Install the necessary software
 
