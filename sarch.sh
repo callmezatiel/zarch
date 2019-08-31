@@ -64,10 +64,10 @@ fi
 #Cheking Os Architecture
 function archicheck {
 if [[ $(uname -m ) = x86_64 ]]; then
-  sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf  
+  sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
 else
   echo -e "\e[32m[-] multilab is already Enabled !\e[0m"
-	#sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf 
+	#sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
 fi
 
 
@@ -82,23 +82,23 @@ echo -e $Cyan   "    +${Yellow}-------------------------------------------------
 sleep 0.1
 echo -e $Yellow   "    |                                                                  $Yellow |"
 sleep 0.1
-echo -e "     |$Red             ███████╗ █████╗ ██████╗  ██████╗██╗  ██╗             $Yellow |"
+echo -e "     |$Red         ███████╗  █████╗ ██████╗  ██████╗██╗  ██╗                $Yellow |"
 sleep 0.1
-echo -e "     |$Red             ╚══███╔╝██╔══██╗██╔══██╗██╔════╝██║  ██║             $Yellow |"   
+echo -e "     |$Red         ██╔════╝ ██╔══██╗██╔══██╗██╔════╝██║  ██║                $Yellow |"
 sleep 0.1
-echo -e "     |$BRed               ███╔╝ ███████║██████╔╝██║     ███████║             $Yellow |"  
+echo -e "     |$BRed         ███████╗ ███████║██████╔╝██║     ███████║                $Yellow |"
 sleep 0.1
-echo -e "     |$BRed              ███╔╝  ██╔══██║██╔══██╗██║     ██╔══██║             $Yellow |" 
+echo -e "     |$BRed         ╚════██║ ██╔══██║██╔══██╗██║     ██╔══██║                $Yellow |"
 sleep 0.1
-echo -e "     |$Red             ███████╗██║  ██║██║  ██║╚██████╗██║  ██║             $Yellow |" 
+echo -e "     |$Red         ███████ ║██║  ██║██║  ██║╚██████╗██║  ██║                $Yellow |"
 sleep 0.1
-echo -e "     |$Red             ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝             $Yellow |"  
+echo -e "     |$Red         ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝   ╚═╝                $Yellow |"
 sleep 0.1
-echo -e "     |$Red              Follow me on: twitter.com/CallMeZatiel              $Yellow |"
+echo -e "     |$Red              Follow me on: twitter.com/Sarch23268909             $Yellow |"
 sleep 0.1
 echo -e $Cyan   "    +${Yellow}-------------------------------------------------------------------${Cyan}+${Yellow}"
 sleep 0.1
-echo -e "            |${BRed} [!]  | The Ultimate Script For Arch Linux | Ver.BETA${Yellow} |"     
+echo -e "            |${BRed} [!]  | The Ultimate Script For Arch Linux | Ver.BETA${Yellow} |"
 }
 #}}}
   users_list=(`cat /etc/passwd | grep "/home" | cut -d: -f1`);
@@ -138,14 +138,14 @@ configure_sudo(){
 # Initial yay -Syu
 function inityayupd {
   echo ""
-  echo; echo -e "\033[1m Updating ..... \e[0m\E[31m| Please stop any install process before updating\e[0m"; 
+  echo; echo -e "\033[1m Updating ..... \e[0m\E[31m| Please stop any install process before updating\e[0m";
   echo
-  yay -Syu --noconfirm; 
-  echo "Update Completed"; 
+  yay -Syu --noconfirm;
+  echo "Update Completed";
   sleep 1;
 }
 
-# Requirements Check 
+# Requirements Check
 
 function checkyay {
   which yay > /dev/null 2>&1
@@ -156,7 +156,7 @@ else
 echo [x]::[warning]:this script require Yay ;
 echo ""
 echo [!]::[please wait]: Installing Yay ..  ;
-git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si 
+git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 echo ""
 fi
 sleep 1
@@ -196,7 +196,7 @@ sleep 1
 
 # Script Initiation
 #checkroot && sleep 1
-checkwget && checkyay && checkgit 
+checkwget && checkyay && checkgit
 showlogo
 archicheck && inityayupd && clear && sleep 1
 #################################################################################################
@@ -207,8 +207,8 @@ archicheck && inityayupd && clear && sleep 1
 function installokular {
   echo
   echo -e " Currently Installing ${b}Okular${enda}"
-  echo -e " ${bu}Okular is a universal document viewer 
-  developed by KDE. 
+  echo -e " ${bu}Okular is a universal document viewer
+  developed by KDE.
  Read more about it here: ${b}https://okular.kde.org/${endc}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
@@ -225,7 +225,7 @@ function installokular {
 function installgparted {
   echo
   echo -e " Currently Installing ${b}GParted${enda}"
-  echo -e " ${bu}GParted is a free partition editor for 
+  echo -e " ${bu}GParted is a free partition editor for
   graphically managing your disk partitions.
  Read more about it here: ${b}https://gparted.org/${endc}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
@@ -243,7 +243,7 @@ function installgparted {
 function installclementine {
   echo
   echo -e " Currently Installing ${b}Clementine${enda}"
-  echo -e " ${bu}Clementine is a free and open-source audio player. 
+  echo -e " ${bu}Clementine is a free and open-source audio player.
   It is a port of Amarok 1.4 to the Qt 4 framework and the GStreamer
   multimedia framework
  Read more about it here: ${b}https://www.clementine-player.org/${endc}"
@@ -614,8 +614,8 @@ function installsweep {
 function installBreakerb {
   showlogo
   echo -e " Preparing To Install ${b}Breaker${enda}" && echo
-  echo -e " ${bu}Beaker is an experimental browser for exploring and 
-  building the peer-to-peer Web.Turning the browser into a supercharged 
+  echo -e " ${bu}Beaker is an experimental browser for exploring and
+  building the peer-to-peer Web.Turning the browser into a supercharged
   tool for sharing websites, files, apps, and more.
   Read more about it here: ${b}https://beakerbrowser.com${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
@@ -633,7 +633,7 @@ function installBreakerb {
 function installBrave {
   showlogo
   echo -e " Preparing To Install ${b}Brave Browser${enda}" && echo
-  echo -e " ${bu}The Brave browser is a fast, private and secure web 
+  echo -e " ${bu}The Brave browser is a fast, private and secure web
   browser for PC and mobile. It blocks ads and trackers
   Read more about it here: ${b}https://brave.com/BLO342${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
@@ -757,7 +757,7 @@ function installteamviewer {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Teamviewer${enda}"
-   yay -S --noconfirm teamviewer 
+   yay -S --noconfirm teamviewer
   echo -e " ${b}Teamviewer${enda} Was Successfully Installed"
   echo && echo -e " Run Teamviewer From The ${b}Internet${enda} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -990,30 +990,14 @@ function installytgui  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Youtube Downloader (Gui)${enda}"
-   yay -S --noconfirm youtube-dl-gui-git 
+   yay -S --noconfirm youtube-dl-gui-git
   echo -e " ${b}Youtube Downloader (Gui)${enda} Was Successfully Installed"
   echo && echo -e " Run Youtube Downloader (Gui) From The ${b}Internet${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
   read input
 }
 
-# Install iceweasel
-function installice  {
-  showlogo
-  echo -e " Preparing To Install ${b}GNU IceCat (Iceweasel)${enda}" && echo
-  echo -e " ${bu}IceWeasel,is a free software rebranding of the Mozilla Firefox
-  web browser distributed by the GNU Project.
-  It is compatible with Linux, Windows, Android and OS X.
-  Read more about it here: ${b}https://goo.gl/m8koYc${enda}"
-  echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
-  echo -e " Installing ${b}GNU IceCat (Iceweasel)${enda}"
-   yay -S --noconfirm iceweasel 
-  echo -e " ${b}GNU IceCat (Iceweasel)${enda} Was Successfully Installed"
-  echo && echo -e " Run GNU IceCat (Iceweasel) From The ${b}Internet${enda} Menu "
-  echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
-}
+
 
 # Install VLC
 function installvlc  {
@@ -1061,7 +1045,7 @@ function installvivaldi  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}vivaldi${enda}"
-  yay -S --noconfirm vivaldi 
+  yay -S --noconfirm vivaldi
   echo -e " ${b}vivaldi${enda} Was Successfully Installed"
   echo && echo -e " Run vivaldi From The ${b}Internet${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1235,8 +1219,8 @@ function installhexchat  {
 function installdino  {
   showlogo
   echo -e " Preparing To Install ${b}Dino${enda}" && echo
-  echo -e " ${bu}Dino is a modern open-source chat client for the 
-  desktop. It focuses on providing a clean and reliable Jabber/XMPP 
+  echo -e " ${bu}Dino is a modern open-source chat client for the
+  desktop. It focuses on providing a clean and reliable Jabber/XMPP
   experience while having your privacy in mind.
   Read more about it here: ${b}https://dino.im${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
@@ -1437,7 +1421,7 @@ function installkrita  {
 function installgeary {
   echo
   echo -e " Currently Installing ${b}Geary${enda}"
-  echo -e " ${bu}Geary is a free and open-source email client 
+  echo -e " ${bu}Geary is a free and open-source email client
   written in Vala and based on WebKitGTK. Although since adopted
   by the GNOME project.
  Read more about it here: ${b}https://wiki.gnome.org/Apps/Geary${endc}"
@@ -1580,7 +1564,7 @@ function installatom  {
 function installarduino {
   showlogo
   echo -e " Preparing To Install ${b}Arduino${enda}" && echo
-  echo -e " ${bu}Arduino is an open-source electronics platform based on 
+  echo -e " ${bu}Arduino is an open-source electronics platform based on
   easy-to-use hardware and software. It's intended for anyone making interactive projects.
   Read more about it here: ${b}https://www.arduino.cc${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
@@ -1604,7 +1588,7 @@ function installaptana  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Aptana Studio${enda}"
-   yay -S --noconfirm aptana-studio 
+   yay -S --noconfirm aptana-studio
   echo -e " ${b}Aptana Studio${enda} Was Successfully Installed"
   echo && echo -e " Run Aptana Studio From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1657,7 +1641,7 @@ function installbrackets  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Brackets${enda}"
-  yay -S --noconfirm brackets 
+  yay -S --noconfirm brackets
   echo -e " ${b}Brackets${enda} Was Successfully Installed"
   echo && echo -e " Run Brackets From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1696,7 +1680,7 @@ function installcloud9 {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Cloud9${enda}"
-   yay -S --noconfirm c9.core 
+   yay -S --noconfirm c9.core
   echo -e " ${b}Cloud9${enda} Was Successfully Installed"
   echo && echo -e " Run Cloud9 From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1731,7 +1715,7 @@ function installeditra {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Editra${enda}"
-   yay -S --noconfirm editra 
+   yay -S --noconfirm editra
   echo -e " ${b}Editra${enda} Was Successfully Installed"
   echo && echo -e " Run Editra From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1855,7 +1839,7 @@ function installphpstorm {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}PHPStorm${enda}"
-   yay -S --noconfirm phpstorm 
+   yay -S --noconfirm phpstorm
   echo -e " ${b}PHPStorm${enda} Was Successfully Installed"
   echo && echo -e " Run PHPStorm From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1889,7 +1873,7 @@ function installvistudiocode {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Visual Studio Code${enda}"
-   sudo pacman -S --noconfirm visual-studio-code-bin
+   yay -S --noconfirm visual-studio-code-bin
   echo -e " ${b}Visual Studio Code${enda} Was Successfully Installed"
   echo && echo -e " Run Visual Studio Code From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1959,7 +1943,7 @@ function installhttrack  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}HTTrack (httracqt)${enda}"
-   yay -S --noconfirm httraqt 
+   yay -S --noconfirm httraqt
   echo -e " ${b}HTTrack (httracqt)${enda} Was Successfully Installed"
   echo && echo -e " Run HTTrack (httracqt) From The ${b}Internet${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1977,7 +1961,7 @@ function installlibreoffi  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Libre Office${enda}"
-   sudo pacman -S --noconfirm libreoffice-fresh 
+   sudo pacman -S --noconfirm libreoffice-fresh
   echo -e " ${b}Libre Office${enda} Was Successfully Installed"
   echo && echo -e " Run Libre Office From The ${b}Office${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -2014,7 +1998,7 @@ function installandrostu  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Android Studio${enda}"
-   yay -S --noconfirm android-studio 
+   yay -S --noconfirm android-studio
   echo -e " ${b}Android Studio${enda} Was Successfully Installed"
   echo && echo -e " Run Android Studio From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -2026,9 +2010,9 @@ function installandrostu  {
 function vmware  {
   showlogo
   echo -e " Preparing To Install ${b}VM Ware-Workstarion${enda}" && echo
-  echo -e " ${bu}VMware Workstation Pro is the industry standard for running multiple operating 
+  echo -e " ${bu}VMware Workstation Pro is the industry standard for running multiple operating
   systems on a single Linux or Windows PC. Workstation 15 Pro improves on the leading
-  desktop with an updated high-DPI user interface, a new REST API, support for the 
+  desktop with an updated high-DPI user interface, a new REST API, support for the
   latest Windows and Linux operating systems, and more…
   Read more: ${b}https://www.vmware.com${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
@@ -2086,10 +2070,10 @@ function installsteam {
 function installlutris {
   showlogo
   echo -e " Preparing To Install ${b}Lutris${enda}" && echo
-  echo -e " ${bu}Lutris is an Open Source gaming platform for Linux. 
-  It installs and launches games so you can start playing without the 
-  hassle of setting up your games. Get your games from GOG, Steam, 
-  Battle.net, Origin, Uplay and many other sources running on any Linux 
+  echo -e " ${bu}Lutris is an Open Source gaming platform for Linux.
+  It installs and launches games so you can start playing without the
+  hassle of setting up your games. Get your games from GOG, Steam,
+  Battle.net, Origin, Uplay and many other sources running on any Linux
   powered gaming machine.
   Read more about it here: ${b}https://lutris.net${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
@@ -2200,7 +2184,7 @@ function showchat {
         2)    Kmail
         3)    HexChat
         4)    Quassel
-        5)    Geany Mail 
+        5)    Geany Mail
         6)    Dino (XMPP Chat)
        ---------------------------
         q)    Return To R00T MENU"
@@ -2214,7 +2198,7 @@ function showchat {
   4) installquassel ;;
   5) installgeary ;;
   6) installdino ;;
-  
+
   q) sleep 1 ;;
   *) echo " \"$option\" Is Not A Valid Option"; sleep 1; showchat ;;
   esac
@@ -2300,7 +2284,7 @@ function showaudio {
   echo -e " ${b}[ AUDIO APPLICATIONS ]${enda}"
   echo -e "Make A Choice
         1)    Audacious (Player)
-        2)    Amarok (Player - For KDE)
+        2)    Amarok (Reproductor de musica - For KDE)
         3)    Banshee (Player - For Gnome)
         4)    Sonata (Player - Very Tiny)
         5)    Audacity (Recorder)
@@ -2308,7 +2292,7 @@ function showaudio {
         7)    Sweep (Recorder & Live Playback)
         8)    VLC
         9)    Pulse Audio
-        10)   Clementine (Player)
+        10)   Clementine (Reproductor de musica)
        ---------------------------
         q)    Return To R00T MENU"
   echo
@@ -2341,30 +2325,28 @@ function showwebapps {
         4)    Youtube Downloader (Terminal)
         5)    Youtube Downloader (GUI)
         6)    Opera Browser
-        7)    Iceweasel Browser
-        8)    Vivaldi Browser
-        9)    Adobe Flash Player
-        10)   Firefox Devoleper Edition
-        11)   Breaker Browser (P2P)
-        12)   Brave Browser
+        7)    Vivaldi Browser
+        8)    Adobe Flash Player
+        9)    Firefox Devoleper Edition
+        10)   Breaker Browser (P2P)
+        11)   Brave Browser
        ---------------------------
-        q)    Return To R00T MENU"
+        q)   Regresar a ROOT MENU"
   echo
   echo -en " Choose An Option: "
   read option
   case $option in
-  1) installchromium ;;
-  2) installchrome ;;
-  3) installfirefox ;;
-  4) installytbdwn ;;
-  5) installytgui ;;
-  6) installopera ;;
-  7) installice ;;
-  8) installvivaldi ;;
-  9) installflashplugin ;;
-  10) installfirefoxDev ;;
-  11) installBreakerb ;;
-  12) installBrave ;;
+  0) installchromium ;;
+  1) installchrome ;;
+  2) installfirefox ;;
+  3) installytbdwn ;;
+  4) installytgui ;;
+  5) installopera ;;
+  6) installvivaldi ;;
+  7) installflashplugin ;;
+  8) installfirefoxDev ;;
+  9) installBreakerb ;;
+  10) installBrave ;;
 
   q) sleep 1 ;;
   *) echo " \"$option\" Is Not A Valid Option"; sleep 1; showwebapps ;;
@@ -2420,7 +2402,7 @@ function showdevapps {
   17) installatom ;;
   18) installintelliju ;;
   19) installkraken ;;
-  
+
   q) sleep 1 ;;
   *) echo " \"$option\" Is Not A Valid Option"; sleep 1; showdevapps ;;
   esac
@@ -2432,7 +2414,7 @@ function systemtools {
   echo -e " ${b}[ SYSTEM TOOLS APPS ]${enda}"
   echo -e "Make A Choice
         1)    VMware Workstation
-  
+
        ---------------------------
         q)    Return To R00T MENU"
   echo
@@ -2511,7 +2493,7 @@ function showothapps {
         13)   HTTrack (Httraqt)
         14)   LibreOffice
         15)   HardInfo (system information tool)
-        16)   Virtual Box
+        16)   VirtualBox
         17)   GParted
         18)   Okular (Reader)
        ---------------------------
@@ -2602,25 +2584,25 @@ do
 showlogo
 echo -e " ${b}[ R00T MENU ]${enda}"
 echo -e "Make A Choice
-        1)    Text Editors
-        2)    FTP/Torrent Applications
-        3)    Download Managers
-        4)    Network Managers
-        5)    VPN Clients
-        6)    Chat/Mail Applications
-        7)    Image Editors
-        8)    Video editors/Record
-        9)    Archive Handlers
+        1)    Editores de texto
+        2)    Aplicaciones FPT/Torrent
+        3)    Gestores de Descarga
+        4)    Gestores de Red
+        5)    Clientes VPN
+        6)    Aplicaciones Chat/Email
+        7)    Editores de Imagenes
+        8)    Editores de video / Grabadores
+        9)    Gestores de Archivos
        10)    Audio Applications
-       11)    Other Applications
-       12)    Developer Tools (Full Stack)
-       13)    Browser/Web Plugins
-       14)    System Tools Apps
-       15)    Gamer Apps
-       16)    Support Zarch Project
+       11)    Otras Aplicaciones
+       12)    Herramientas de Desarrollo (Full Stack)
+       13)    Navegador / Complementos web
+       14)    Aplicaciones del Sistema
+       15)    Juegos
+       16)    Soporte Sarch project
       ------------------------
-        a)    About Zarch Script
-        q)    Leave Zarch Script"
+        a)    About Sarch Script
+        q)    Leave Sarch Script"
 echo
 echo -en " Choose An Option: "
 read option
@@ -2652,38 +2634,38 @@ function showabout {
   clear
   showlogo && echo -en "
      +-------------------------------------------------------------------+
-     |                            Zarch Script                           |
-     |          Arch Applications Automatic Installation Script          |  
+     |                            Sarch Script                           |
+     |          Arch Applications Automatic Installation Script          |
      +-------------------------------------------------------------------+
-     |         Op-System         :       Arch Linux / Reborn OS          |  
-     |         Version           :       v1.0 08/27/2019                 |  
-     |         Developer / Autor :       Zatiel                          |  
-     |         [+] Special Thanks:       D35tr0y3r K3rn3l                |  
+     |         Op-System         :       Arch Linux / Manjaro            |
+     |         Version           :       v1.0 08/27/2019                 |
+     |         Developer / Autor :       mester-ces                      |
+     |         [+] Special Thanks:       Zatiel                          |
      +-------------------------------------------------------------------+
 
    ${b}Description${enda}
-   This Script Is Meant To Help Users Install Their Favourite 
+   This Script Is Meant To Help Users Install Their Favourite
    Applications On A Fresh Install Of ArchLinux , Saving Time To Use It.
-   On This Script I Added All The Softwares From The Full List Of 
-   Archlinux Applications The Script Have Exactly ( v1.0 ) 
-   
-   ${r}Ps: Special thanks to all the users of my group: 
+   On This Script I Added All The Softwares From The Full List Of
+   Archlinux Applications The Script Have Exactly ( v1.0 )
+
+   ${r}Ps: Special thanks to all the users of my group:
    "Reborn OS Latinomaerica" for their incredible support ${endc}
     "
-  echo && echo -en " ${yellow}Press Enter To Return To R00T MENU${endc}"
+  echo && echo -en " ${yellow}Presionar ENTER para volver a ROOT MENU${endc}"
   read input
 }
 
-# Exit Zarch
+# Exit Sarch
 function archioexit {
-  showlogo && echo -e " Thank You For Using ${b} Zarch Script ${enda}
- For More Information please feel free to tweet me @CallMeZatiel :
- ${b}==>> ${bu}Twitter.com/CallMeZatiel${enda}"
+  showlogo && echo -e " Thank You For Using ${b} Sarch Script ${enda}
+ Para obtener más información, siéntase libre de tuitearme en @Sarch:
+ ${b}==>> ${bu}twitter.com/Sarch23268909${enda}"
   echo
   sleep 1
   exit
 }
 
 done
-#Zatiel <3 
+#Zatiel <3
 # End

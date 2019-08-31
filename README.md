@@ -1,6 +1,6 @@
-# Zarch BETA
+# Sarch BETA
 
-[ Languages: [English](README.md) ]
+[ Languages: [Spanish](README.md) ]
 
 Install the necessary software
 
@@ -52,10 +52,10 @@ and more, comming soon...
 * Type the following commands :
 
     - [X] cd Desktop
-    - [X] unzip zarch.zip
+    - [X] unzip sarch.zip
     - [X] cd zarch
-    - [X] chmod +777 zarch.sh
-    - [X] ./zarch.sh  or  bash zarch.sh
+    - [X] chmod +777 sarch.sh
+    - [X] ./sarch.sh  or  bash sarch.sh
 
 
 
