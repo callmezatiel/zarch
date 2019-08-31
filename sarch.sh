@@ -92,7 +92,7 @@ echo -e "     |$BRed         ╚════██║ ██╔══██║�
 sleep 0.1
 echo -e "     |$Red         ███████ ║██║  ██║██║  ██║╚██████╗██║  ██║                   $Yellow |"
 sleep 0.1
-echo -e "     |$Red         ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝                  $Yellow |"
+echo -e "     |$Red         ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝   ╚═╝                  $Yellow |"
 sleep 0.1
 echo -e "     |$Red              Follow me on: twitter.com/Sarch23268909             $Yellow |"
 sleep 0.1
