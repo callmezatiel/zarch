@@ -1,4 +1,4 @@
-# Zarch BETA
+# Sarch BETA
 
 [ Languages: [English](README.md) ]
 
