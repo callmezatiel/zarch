@@ -1873,7 +1873,7 @@ function installvistudiocode {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Visual Studio Code${enda}"
-   sudo pacman -S --noconfirm visual-studio-code-bin
+   yay -S --noconfirm visual-studio-code-bin
   echo -e " ${b}Visual Studio Code${enda} Was Successfully Installed"
   echo && echo -e " Run Visual Studio Code From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
