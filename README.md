@@ -61,6 +61,6 @@ and more, comming soon...
     - [X] chmod +x zarch.sh
     - [X] ./zarch.sh  or  bash zarch.sh
 
-Buy me a coffee.
+# Buy me a coffee
 <a href="https://www.paypal.me/zatiel"><img src="https://img.shields.io/badge/don-paypal-blue"></a> <a href="https://www.patreon.com/zatiel"><img src="https://img.shields.io/badge/don-patreon-ff69b4"> 
 
