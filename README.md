@@ -2,11 +2,9 @@
 
 [ Languages: [English](README.md) ]
 
-Install the necessary software
-
 Dependencies
 
-* "Arch linux"
+* "Arch Linux"
 * "yay"
 * "git"
 * "wget"
@@ -24,28 +22,29 @@ And some commands in automatic way to do its job i hope you like my tool.
 
 ### Features
 
-Install the necessary software
+GIVE ME A TAARGET
 
 * "Text Editors"
-* "FTP/Torrent Applications"
+* "FTP / Torrent Apps"
 * "Download Managers"
-* "Network managers"
+* "Network Conection Apps"
 * "VPN clients"
-* "Chat Applications"
+* "Full Stack Tools"
 * "Image Editors"
-* "Video editors/Record"
-* "Archive Handlers"
+* "Multimedia Apps"
 * "Audio Applications"
-* "Other Applications"
-* "Development Environments"
-* "Browser/Web Plugins"
+* "Browsers And Plugins"
+* "Office Apps"
 * "System Tools Apps"
+* "Black Arch Tools"
+* "Utilities"
+* "Other Apps"
 
 and more, comming soon...
 
 ## Video
 
-* [New Video](https://youtu.be/yiPsz-suvcc)
+* [New Video]()
 
 ## Here is how to make the script works
 
