@@ -58,7 +58,7 @@ and more, comming soon...
     - [X] cd Desktop
     - [X] unzip zarch.zip
     - [X] cd zarch
-    - [X] chmod +777 zarch.sh
+    - [X] chmod +x zarch.sh
     - [X] ./zarch.sh  or  bash zarch.sh
 
 
