@@ -94,11 +94,12 @@ echo -e "     |$Red             ███████╗██║  ██║█�
 sleep 0.1
 echo -e "     |$Red             ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝             $Yellow |"  
 sleep 0.1
-echo -e "     |$Red              Follow me on: twitter.com/CallMeZatiel              $Yellow |"
+echo -e "     |$Red              \e[1;37mFollow me on: twitter.com/CallMeZatiel              $Yellow |"
 sleep 0.1
 echo -e $Cyan   "    +${Yellow}-------------------------------------------------------------------${Cyan}+${Yellow}"
 sleep 0.1
-echo -e "            |${BRed} [!]  | The Ultimate Script For Arch Linux | Ver.BETA${Yellow} |"     
+echo -e "                 \e[101m\e[1;37m::    Buy Me A Coffe: paypal.me/zatiel   ::\e[0m\n"
+echo -e "           \e[101m\e[1;37m| [!]  | The Ultimate Script For Arch Linux | Ver.1.0  |\e[0m\n"               
 }
 #}}}
   users_list=(`cat /etc/passwd | grep "/home" | cut -d: -f1`);
@@ -2120,6 +2121,39 @@ function installdiscord  {
   read input
 }
 
+####################################### ZARCH BLACK ARCH ##################################################
+# Install Black Arch Tools
+function installblack {
+  showlogo
+  echo -e " Preparing To Install ${b}Black Arch Tools${enda}" && echo
+  echo -e " ${bu}BlackArch Linux is an Arch Linux-based penetration 
+  testing distribution for penetration testers and security researchers.
+  The repository contains 2325 tools. 
+  Read more about it here: ${b}https://blackarch.org${enda}"
+  echo && echo -en " ${y}Press Enter To Continue${endc}"
+  read input
+  echo -e " Installing ${b}Black Arch Repository${enda}"
+  sudo curl -O https://blackarch.org/strap.sh
+  chmod +x strap.sh
+  sudo ./strap.sh
+  echo -e " ${b}Black Arch Repository${enda} Was Successfully Installed"
+  echo && echo -e " # After install repository use
+  
+  # To list all of the available tools, run
+  ${b}$ sudo pacman -Sgg | grep blackarch | cut -d' ' -f2 | sort -u
+   
+  # To see the blackarch categories, run
+  ${b}$ sudo pacman -Sg | grep blackarch
+  
+  # To install a category of tools, run
+  ${b}$ sudo pacman -S blackarch-<category>
+  
+  # To install all of the tools, run
+  ${b}$ sudo pacman -S blackarch"
+  echo && echo -en " ${y}Press Enter To Return To Zarch Menu${endc}"
+  read input
+}
+
 ######### Programs Installations : END : ##########################
 #################################################################################################
 #######################################3RD PART##################################################
@@ -2469,16 +2503,26 @@ function showgamer {
   esac
 }
 
-
-# Menu Configs
-function archconfigs {
+# Menu Black Arch Tools
+function showblack {
   showlogo
-  echo -e " ${b}[ Dotfiles ]${enda}"
-  echo -e " Download Reborn OS: ${bu}https://rebornos.org${endc}"
+  echo -e " ${b}[ Enable Black Arch Tools ]${enda}"
+  echo -e "Make A Choice
+        1)    Install Black Arch
+  
+       ---------------------------
+        q)    Return To R00T MENU"
+  echo
+  echo -en " Choose An Option: "
+  read option
+  case $option in
+  1) installblack ;;
 
-
-  read input
+  q) sleep 1 ;;
+  *) echo " \"$option\" Is Not A Valid Option"; sleep 1; showwebapps ;;
+  esac
 }
+
 # Support Zatiel
 function supportzatiel {
   showlogo
@@ -2582,7 +2626,7 @@ function showvid {
         3)    Kdenlive
         4)    OBS (Open Broadcaster Software)
        ---------------------------
-        q)    Return To R00T MENU"
+        q)    Return To ZARCH MENU"
   echo
   echo -en " Choose An Option: "
   read option
@@ -2600,29 +2644,26 @@ function showvid {
 while :
 do
 showlogo
-echo -e " ${b}[ R00T MENU ]${enda}"
-echo -e "Make A Choice
-        1)    Text Editors
-        2)    FTP/Torrent Applications
-        3)    Download Managers
-        4)    Network Managers
-        5)    VPN Clients
-        6)    Chat/Mail Applications
-        7)    Image Editors
-        8)    Video editors/Record
-        9)    Archive Handlers
-       10)    Audio Applications
-       11)    Other Applications
-       12)    Developer Tools (Full Stack)
-       13)    Browser/Web Plugins
-       14)    System Tools Apps
-       15)    Gamer Apps
-       16)    Support Zarch Project
-      ------------------------
-        a)    About Zarch Script
-        q)    Leave Zarch Script"
+echo -e "                                ${BCyan}[ ZARCH MENU ]${enda}"
+echo -e "                               GIVE ME A TARGET
+
+ [1]   Text Editors                 [11]   Other Apps
+ [2]   FTP / Torrent Apps           [12]   Full Stack Tools
+ [3]   Download Managers            [13]   Browsers And Plugins
+ [4]   Network Conection Apps       [14]   System Tools Apps
+ [5]   VPN Clients                  [15]   Gamer Apps             [21]   Hentai
+ [6]   Office                       [16]   Black Arch             [???]  Danger Zone
+ [7]   Image Editors                [17]   Security Aps
+ [8]   Video Editors / Record       [18]   Custom Kernels
+ [9]   Utilities                    [19]   Icons And Themes
+ [10]  Multimedia Apps              [20]   New Stores 
+          
+    a)    About Zarch Script       s)    Support Zarch Project        q)    Quit Zarch Script"   
+        
+        
+        
 echo
-echo -en " Choose An Option: "
+echo -en " Select Option: "
 read option
 case $option in
 1) showtext ;;
@@ -2640,9 +2681,11 @@ case $option in
 13) showwebapps ;;
 14) systemtools ;;
 15) showgamer ;;
-16) supportzatiel;;
+16) showblack ;;
+
+s) supportzatiel;;
 a) showabout ;;
-q) archioexit ;;
+q) zarchexit ;;
 *) echo " \"$option\" Is Not A Valid Option"; sleep 1 ;;
 
 esac
@@ -2661,21 +2704,21 @@ function showabout {
      |         [+] Special Thanks:       D35tr0y3r K3rn3l                |  
      +-------------------------------------------------------------------+
 
-   ${b}Description${enda}
+   ${Cyan}Description${enda}
    This Script Is Meant To Help Users Install Their Favourite 
    Applications On A Fresh Install Of ArchLinux , Saving Time To Use It.
    On This Script I Added All The Softwares From The Full List Of 
    Archlinux Applications The Script Have Exactly ( v1.0 ) 
    
-   ${r}Ps: Special thanks to all the users of my group: 
+   ${Red}Ps: Special thanks to all the users of my group: 
    "Reborn OS Latinomaerica" for their incredible support ${endc}
     "
-  echo && echo -en " ${yellow}Press Enter To Return To R00T MENU${endc}"
+  echo && echo -en " ${Cyan}Press Enter To Return To ZARCH MENU${endc}"
   read input
 }
 
 # Exit Zarch
-function archioexit {
+function zarchexit {
   showlogo && echo -e " Thank You For Using ${b} Zarch Script ${enda}
  For More Information please feel free to tweet me @CallMeZatiel :
  ${b}==>> ${bu}Twitter.com/CallMeZatiel${enda}"
