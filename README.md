@@ -42,10 +42,6 @@ GIVE ME A TAARGET
 
 and more, comming soon...
 
-## Video
-
-* [New Video]()
-
 ## Here is how to make the script works
 
 # Install
