@@ -37,8 +37,9 @@ GIVE ME A TAARGET
 * "Utilities"
 * "Other Apps"
 
+```
 * and more, comming soon...
-
+```
 ## Here is how to make the script works
 
 # Install
