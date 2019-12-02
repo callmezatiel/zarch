@@ -2,10 +2,13 @@
 
 Dependencies
 
-* "Arch Linux"
-* "yay"
-* "git"
-* "wget"
+* "Arch Linux Distro"
+
+| Dependencies| Usage |
+| ------ | ------ |
+| yay |  Yet another yogurt. Pacman wrapper and AUR helper written in go. (Non-optional) |
+| git |  The fast distributed version control system (Non-optional) |
+| wget |  Network utility to retrieve files from the Web (Non-optional) |
 
 And some commands in automatic way to do its job i hope you like my tool.
 
