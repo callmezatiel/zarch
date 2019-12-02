@@ -37,9 +37,9 @@ GIVE ME A TAARGET
 * "Utilities"
 * "Other Apps"
 
-```
+
 * and more, comming soon...
-```
+
 ## Here is how to make the script works
 
 # Install
@@ -48,12 +48,14 @@ GIVE ME A TAARGET
 * Open The Terminal .
 * Type the following commands :
 
+```
     - [X] cd Desktop
     - [X] unzip zarch.zip
     - [X] cd zarch
     - [X] chmod +x strap.sh
     - [X] chmod +x zarch.sh
     - [X] ./zarch.sh  or  bash zarch.sh
+```
 
 ## Buy me a coffee
 <a href="https://www.paypal.me/zatiel"><img src="https://img.shields.io/badge/don-paypal-blue"></a> <a href="https://www.patreon.com/zatiel"><img src="https://img.shields.io/badge/don-patreon-ff69b4"> 
