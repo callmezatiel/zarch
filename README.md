@@ -10,13 +10,9 @@ Dependencies
 And some commands in automatic way to do its job i hope you like my tool.
 
 ## Preview
-[![Riasu-2019-09-01-02-14-31.png](https://i.postimg.cc/Prq7bwjw/Riasu-2019-09-01-02-14-31.png)](https://postimg.cc/dDznwDDs)
-
-[![Linux-2019-08-27-13-18-40.png](https://i.postimg.cc/g28H3znh/Linux-2019-08-27-13-18-40.png)](https://postimg.cc/jDqfbr6q)
-
-[![Riasu-2019-09-01-02-14-48.png](https://i.postimg.cc/C5xc4WWg/Riasu-2019-09-01-02-14-48.png)](https://postimg.cc/ft17zgz2)
-
-[![Riasu-2019-09-01-02-15-58.png](https://i.postimg.cc/cCkXkFS8/Riasu-2019-09-01-02-15-58.png)](https://postimg.cc/n974CYMH)
+[![Hentai-1.png](https://i.postimg.cc/0Qh7SSgZ/Hentai-1.png)](https://postimg.cc/47bKkmxh)
+[![Hentai-2.png](https://i.postimg.cc/R0Dtrt09/Hentai-2.png)](https://postimg.cc/DW10L8sY)
+[![Hentai-3.png](https://i.postimg.cc/HnQ87P9s/Hentai-3.png)](https://postimg.cc/1V33kBdL)
 
 ### Features
 
