@@ -13,9 +13,9 @@ Dependencies
 And some commands in automatic way to do its job i hope you like my tool.
 
 ## Preview
-[![Hentai-1.png](https://i.postimg.cc/0Qh7SSgZ/Hentai-1.png)](https://postimg.cc/47bKkmxh)
-[![Hentai-2.png](https://i.postimg.cc/R0Dtrt09/Hentai-2.png)](https://postimg.cc/DW10L8sY)
-[![Hentai-3.png](https://i.postimg.cc/HnQ87P9s/Hentai-3.png)](https://postimg.cc/1V33kBdL)
+[![Hentai-1.png](https://i.postimg.cc/0Qh7SSgZ/Hentai-1.png)]
+[![Hentai-2.png](https://i.postimg.cc/R0Dtrt09/Hentai-2.png)]
+[![Hentai-3.png](https://i.postimg.cc/HnQ87P9s/Hentai-3.png)]
 
 ### Features
 
