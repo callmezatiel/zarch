@@ -57,8 +57,7 @@ GIVE ME A TAARGET
     - [X] ./zarch.sh  or  bash zarch.sh
 ```
 
-Issues will be fixed asap. Pull Request Welcomed
-
+# Issues will be fixed asap. Pull Request Welcomed
 https://github.com/callmezatiel/zarch/issues
 
 ## Buy me a coffee
