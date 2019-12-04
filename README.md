@@ -57,6 +57,10 @@ GIVE ME A TAARGET
     - [X] ./zarch.sh  or  bash zarch.sh
 ```
 
+Issues will be fixed asap. Pull Request Welcomed
+
+https://github.com/callmezatiel/zarch/issues
+
 ## Buy me a coffee
 <a href="https://www.paypal.me/zatiel"><img src="https://img.shields.io/badge/don-paypal-blue"></a> <a href="https://www.patreon.com/zatiel"><img src="https://img.shields.io/badge/don-patreon-ff69b4"> 
 
