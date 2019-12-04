@@ -4,7 +4,7 @@ Dependencies
 
 * "Arch Linux Distro"
 
-| Dependencies| Usage |
+| Dependencies| Description |
 | ------ | ------ |
 | yay |  Yet another yogurt. Pacman wrapper and AUR helper written in go. (Non-optional) |
 | git |  The fast distributed version control system (Non-optional) |
