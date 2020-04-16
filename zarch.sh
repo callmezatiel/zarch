@@ -36,14 +36,14 @@ c='\E[36m'
 w='\E[37m'
 endc='\E[0m'
 enda='\033[0m'
-spath="$( cd "$( dirname $0 )" && pwd )"
+spath="$( cd "$( dirname "$0" )" && pwd )"
 ######################################1ST PART###################################################
 
 #Install script if not installed
 function installzarch {
 if [ ! -e "/usr/bin/Zarch" ];then
 	echo -en "\e[32m[-] : Script is not installed. Do you want to install it ? (Y/N) !\e[0m"
-	read install
+	read -r install
 	if [[ $install = Y || $install = y ]] ; then
 		wget  -O /usr/bin/zarch
 		chmod +777 /usr/bin/zarch
@@ -78,9 +78,9 @@ function showlogo {
   clear
 echo ""
 sleep 0.1
-echo -e $Cyan   "    +${Yellow}-------------------------------------------------------------------${Cyan}+"
+echo -e "$Cyan"   "    +${Yellow}-------------------------------------------------------------------${Cyan}+"
 sleep 0.1
-echo -e $Yellow   "    |                                                                  $Yellow |"
+echo -e "$Yellow"   "    |                                                                  $Yellow |"
 sleep 0.1
 echo -e "     |$Red             ███████╗ █████╗ ██████╗  ██████╗██╗  ██╗             $Yellow |"
 sleep 0.1
@@ -154,7 +154,7 @@ function checkyay {
 	echo [✔]::[Yay]: installation found!;
 else
 
-echo [x]::[warning]:this script require Yay ;
+echo "[x]::[warning]:this script require Yay" ;
 echo ""
 echo [!]::[please wait]: Installing Yay ..  ;
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si 
@@ -169,7 +169,7 @@ function checkgit {
 	echo [✔]::[Git]: installation found!;
 else
 
-echo [x]::[warning]:this script require Git ;
+echo "[x]::[warning]:this script require Git" ;
 echo ""
 echo [!]::[please wait]: Installing Git ..  ;
 pacman -S git --noconfirm
@@ -184,7 +184,7 @@ function checkwget {
 	echo [✔]::[wget]: installation found!;
 else
 
-echo [x]::[warning]:this script require wget ;
+echo "[x]::[warning]:this script require wget" ;
 echo ""
 echo [!]::[please wait]: Installing Wget ;
 pacman -S wget --noconfirm
@@ -212,14 +212,14 @@ function installokular {
   developed by KDE. 
  Read more about it here: ${b}https://okular.kde.org/${endc}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Okular${enda}"
   sudo pacman -S --noconfirm okular
   echo -e " ${b}Okular${enda} Was Successfully Installed"
   echo && echo -e " Run Okular From The ${b}Office${enda} Menu "
   echo -en " ${y}Press Enter To Return To Menu${endc}"
   echo
-  read input
+  read -r input
 }
 
 # Install Gparted
@@ -230,13 +230,13 @@ function installgparted {
   graphically managing your disk partitions.
  Read more about it here: ${b}https://gparted.org/${endc}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}GParted${enda}"
   sudo pacman -S --noconfirm gparted
   echo -e " ${b}Gparted${enda} Was Successfully Installed"
   echo -en " ${y}Press Enter To Return To Menu${endc}"
   echo
-  read input
+  read -r input
 }
 
 
@@ -249,14 +249,14 @@ function installclementine {
   multimedia framework
  Read more about it here: ${b}https://www.clementine-player.org/${endc}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Clementine${enda}"
   sudo pacman -S --noconfirm clementine
   echo -e " ${b}Clementine${enda} Was Successfully Installed"
   echo && echo " Run Clementine From ${b}Multimedia${endc}"
   echo -en " ${y}Press Enter To Return To Menu${endc}"
   echo
-  read input
+  read -r input
 }
 
 
@@ -272,13 +272,13 @@ function installfilez {
  and Mac OS X are provided.
  Read more about it here: ${b}https://goo.gl/HkWTQD${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}FileZilla${enda}"
    sudo pacman -S --noconfirm filezilla
   echo -e " ${b}FileZilla${enda} Was Successfully Installed"
   echo && echo -e " Run FileZilla From The ${b}Internet${endc} Menu"
   echo && echo -en " ${y}Press  Enter To Return To Menu${endc}" && echo
-  read input
+  read -r input
 }
 
 # Install gFTP
@@ -293,13 +293,13 @@ function installgftp {
  (transferring files between 2 remote servers via FTP).
  Read more about it here: ${b}https://goo.gl/nDaZbC${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}gFTP${enda}"
    sudo pacman -S --noconfirm gftp
   echo -e " ${b}gFTP${enda} Was Successfully Installed"
   echo && echo -e " Run gFTP From The ${b}Internet${endc} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}" && echo
-  read input
+  read -r input
 }
 
 # Install Transmission
@@ -312,13 +312,13 @@ function installtransmission {
  bad peer blocklists, and the web interface.
  Read more about it here: ${b}https://goo.gl/NX5imd${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Transmission${endc}"
    sudo pacman --noconfirm transmission-qt
   echo -e " ${b}Transmission${enda} Was Successfully Installed"
   echo && echo -e " Run Transmission From The ${b}Internet${enda} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}" && echo
-  read input
+  read -r input
 }
 
 ####################################### ZARCH IMAGE EDITORS ##################################################
@@ -333,13 +333,13 @@ function installpinta {
  images on Linux, Mac, and Windows.
  Read more about it here: ${b}https://goo.gl/i2Jk1j${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Pinta${enda}"
   sudo pacman -S --noconfirm pinta
   echo -e " ${b}Pinta${enda} Was Successfully Installed"
   echo && echo -e " Run Pinta From The ${b}Graphics${enda} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install GIMP
@@ -352,13 +352,13 @@ function installgimp {
  works on many operating systems, in many languages.
  Read more about it here: ${b}https://goo.gl/th8MKc${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}GIMP${enda}"
   sudo pacman -S --noconfirm gimp
   echo -e " ${b}GIMP${enda} Was Successfully Installed"
   echo && echo -e " Run GIMP From The ${b}Graphics${enda} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Inkscape
@@ -375,13 +375,13 @@ function installinkscape {
  much more.
  Read more about it here: ${b}https://goo.gl/mGpNGp${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Inkscape${enda}"
    sudo pacman -S --noconfirm inkscape
   echo -e " ${b}Inkscape${enda} Was Successfully Installed"
   echo && echo -e " Run Inkscape From The ${b}Graphics${enda} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 ####################################### ZARCH ##################################################
@@ -400,13 +400,13 @@ function installark {
  Integration plugin available in the kdeaddons package.
  Read more about it here: ${b}https://goo.gl/yiCdCq${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Ark${enda}"
    sudo pacman -S --noconfirm ark
   echo -e " ${b}Ark${enda} Was Successfully Installed"
   echo && echo -e " Run Ark From The Terminal: ${b}ark${enda}"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install fileroller
@@ -417,13 +417,13 @@ function installfileroller {
  environment.
  Read more about it here: ${b}https://goo.gl/qFKRYh${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}File-Roller${enda}"
    sudo pacman -S --noconfirm file-roller
   echo -e " ${b}File-Roller${enda} Was Successfully Installed"
   echo && echo -e " Run File-Roller From The ${b}Accessories${enda} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Zip/Unzip
@@ -438,13 +438,13 @@ function installzipunzip {
  Read more about Zip: ${b}https://goo.gl/hqUnqT${enda}
  ${bu}Read more about Unzip: ${b}https://goo.gl/EogNij${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Zip/Unzip${enda}"
    sudo pacman -S --noconfirm zip unzip
   echo -e " ${b}Zip/Unzip${enda} Was Successfully Installed"
   echo && echo -e " Run Zip/Unzip From The Terminal: ${b}zip${enda} or ${b}unzip${enda}"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Rar/Unrar
@@ -455,13 +455,13 @@ function installrarunrar {
  one or more files on the Terminal.
  Read more about Rar/Unrar: ${b}https://goo.gl/fM8QGB${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Rar/Unrar${enda}"
    sudo pacman -S --noconfirm rar unrar
   echo -e " ${b}Rar/Unrar${enda} Was Successfully Installed"
   echo && echo -e " Run Rar/Unrar From The Terminal: ${b}rar${enda} or ${b}unrar${enda}"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 ####################################### ZARCH AUDIO ##################################################
@@ -483,13 +483,13 @@ function installaudacious {
  to fetch lyrics for your music, to set an alarm in the morning, and more.
  Read more about it here: ${b}https://goo.gl/naDSNn${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Audacious${enda}"
    sudo pacman -S --noconfirm audacious
   echo -e " ${b}Audacious${enda} Was Successfully Installed"
   echo && echo -e " Run Audacious From The ${b}Multimedia${enda} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Amarok
@@ -502,13 +502,13 @@ function installamarok {
  ever before - and it looks good doing it.
  Read more about it here: ${b}https://goo.gl/AyvhUZ${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Amarok${enda}"
    sudo pacman -S --noconfirm amarok
   echo -e " ${b}Amarok${enda} Was Successfully Installed"
   echo && echo -e " Run Amarok From The ${b}Multimedia${enda} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Banshee
@@ -521,13 +521,13 @@ function installbanshee {
  countless users and volunteers have contributed to Banshee.
  Read more about it here: ${b}https://goo.gl/XHaFXW${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Banshee${enda}"
    sudo pacman -S --noconfirm banshee
   echo -e " ${b}Banshee${enda} Was Successfully Installed"
   echo && echo -e " Run Banshee From The ${b}Multimedia${enda} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Sonata
@@ -538,13 +538,13 @@ function installsonata {
  Daemon (MPD).
  Read more about it here: ${b}https://goo.gl/rFdXhr${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Sonata${enda}"
    sudo pacman -S --noconfirm sonata
   echo -e " ${b}Sonata${enda} Was Successfully Installed"
   echo && echo -e " Run Sonata From The ${b}Multimedia${enda} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Audacity
@@ -557,13 +557,13 @@ function installaudacity {
  languages. And much more..
  Read more about it here: ${b}https://goo.gl/8XWu9b${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Audacity${enda}"
    sudo pacman -S --noconfirm audacity
   echo -e " ${b}Audacity${enda} Was Successfully Installed"
   echo && echo -e " Run Audacity From The ${b}Multimedia${enda} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Ardour
@@ -578,13 +578,13 @@ function installardour {
  for professional use.
  Read more about it here: ${b}https://goo.gl/XeXUDY${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Ardour${enda}"
    sudo pacman -S --noconfirm ardour
   echo -e " ${b}Ardour${enda} Was Successfully Installed"
   echo && echo -e " Run Ardour From The ${b}Multimedia${enda} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Sweep
@@ -599,13 +599,13 @@ function installsweep {
  cursor tool called Scrubby.
  Read more about it here: ${b}https://goo.gl/JeXTQH${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Sweep${enda}"
    sudo pacman -S --noconfirm sweep
   echo -e " ${b}Sweep${enda} Was Successfully Installed"
   echo && echo -e " Run Sweep From The ${b}Multimedia${enda} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 ####################################### ZARCH BROWSERS ##################################################
@@ -620,13 +620,13 @@ function installBreakerb {
   tool for sharing websites, files, apps, and more.
   Read more about it here: ${b}https://beakerbrowser.com${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Breaker Browser${enda}"
    yay -S --noconfirm beaker-browser-bin
   echo -e " ${b}Breaker Browser${enda} Was Successfully Installed"
   echo && echo -e " Run Breaker Browser From The ${b}Internet${enda} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 
@@ -638,13 +638,13 @@ function installBrave {
   browser for PC and mobile. It blocks ads and trackers
   Read more about it here: ${b}https://brave.com/BLO342${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Brave Browser${enda}"
    yay -S --noconfirm brave-bin
   echo -e " ${b}Brave Browser${enda} Was Successfully Installed"
   echo && echo -e " Run Brave Browser From The ${b}Internet${enda} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 
@@ -661,13 +661,13 @@ function installchromium {
  Chromium source code.
  Read more about it here: ${b}https://goo.gl/JgLWwx${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Chromium${enda}"
    sudo pacman -S --noconfirm chromium
   echo -e " ${b}Chromium${enda} Was Successfully Installed"
   echo && echo -e " Run Chromium From The ${b}Internet${enda} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Google Chrome
@@ -680,13 +680,13 @@ function installchrome {
  and beyond uses the WebKit fork Blink.
  Read more about it here: ${b}https://goo.gl/eo9G5F${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Chrome${enda}"
     yay -S --noconfirm google-chrome
   echo -e " ${b}Chrome${enda} Was Successfully Installed"
   echo && echo -e " Run Chrome From The ${b}Internet${enda} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Youtube Downloader
@@ -697,12 +697,12 @@ function installytbdwn {
  any Linux distribution. Frequently updated.
  Read more about it here: ${b}https://goo.gl/tzVwbD${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
    sudo pacman -S --noconfirm youtube-dl
   echo -e " All ${b}Youtube Downloader${enda} Files Were Flaged For Execute Successfully"
   echo && echo -e " Run Youtube Downloader From The Terminal: ${b}youtube-dl \"http://youtube.com/watch?v=XXXXXXX${enda}\" "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Connman
@@ -714,12 +714,12 @@ function installconnman {
   client, plus Enlightenment, ncurses, GTK and Dmenu clients are available.
   Read more about it here: ${b}https://goo.gl/W7VRFy${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
    sudo pacman -S --noconfirm connman
   echo -e " All ${b}Connman${enda} Files Were Flaged For Execute Successfully"
   echo && echo -e " Run Connman From The Terminal"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Skype
@@ -732,13 +732,13 @@ function installskype {
  derived from \"sky\" and \"peer\".
  Read more about it here: ${b}https://goo.gl/kFHLh2${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Skype${enda}"
   yay -S --noconfirm skype
   echo -e " ${b}Skype${enda} Was Successfully Installed"
   echo && echo -e " Run Skype From The ${b}Internet${enda} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Teamviewer
@@ -756,13 +756,13 @@ function installteamviewer {
  and presentation features are included.
  Read more about it here: ${b}https://goo.gl/ipVwtn${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Teamviewer${enda}"
    yay -S --noconfirm teamviewer 
   echo -e " ${b}Teamviewer${enda} Was Successfully Installed"
   echo && echo -e " Run Teamviewer From The ${b}Internet${enda} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # install Opera
@@ -776,13 +776,13 @@ function installopera {
   on FreeBSD systems.${bu}
  Read more about it here: ${b}https://goo.gl/NACi8W${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Opera${enda}"
    sudo pacman -S --noconfirm opera
   echo -e " ${b}Opera ${enda} Was Successfully installed"
  echo && echo -e " Run Opera Browser From The : ${b}Internet${endc} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Adobe Flash Player
@@ -792,12 +792,12 @@ function installflashplugin {
   echo -e " ${b}${r}ATTENTION:${enda} ${bu}You Need To Close All Your Browsers
   Before Installing."
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Adobe Flash Player${enda}"
   pacman -S --noconfirm flashplugin
   echo -e " ${b}Adobe Flash Player${enda} Was Successfully Installed"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Tilix
@@ -808,13 +808,13 @@ function installtilix {
    follows the Gnome Human Interface Guidelines.
  Read more about it here: $https://gnunn1.github.io/tilix-web/${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Tilix${enda}"
    sudo pacman -S --noconfirm tilix
   echo -e " ${b}Tilix${enda} Was Successfully Installed"
   echo && echo -e " Run Tilix From The ${b}Accessories${enda} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Gnome Tweak Tool
@@ -824,13 +824,13 @@ function installgnometweaktool {
   echo -e " ${bu}A tool to customize advanced GNOME 3 options.
  Read more about it here: ${b}https://goo.gl/f3ZGu8${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Gnome Tweak Tool${enda}"
    sudo pacman -S --noconfirm gnome-tweak-tool
   echo -e " ${b}Gnome Tweak Tool${enda} Was Successfully Installed"
   echo && echo -e " Run Gnome Tweak Tool From The Terminal: ${b}gnome-tweak-tool${enda} or From ${b}System${enda} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install netctl
@@ -841,13 +841,13 @@ function installnetctlr {
   connections via profiles. Intended for use with systemd {https://goo.gl/k4qHuW}
   Read more about it here: ${b}https://goo.gl/KQRTHt${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}netctl${enda}"
    sudo pacman -S --noconfirm netctl
   echo -e " ${b}Skype${enda} Was Successfully Installed"
   echo && echo -e " Run netctl From The ${b}Terminal${enda} "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
  # Install NetworkManager
@@ -858,13 +858,13 @@ function installNetworkManager {
   OpenVPN detection with configuration and automatic connection.
   Read more about it here: ${b}https://goo.gl/HsZyQS${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}NetworkManager${enda}"
    sudo pacman -S --noconfirm networkmanager
   echo -e " ${b}NetworkManager${enda} Was Successfully Installed"
   echo && echo -e " Run networkmanager From The ${b}Terminal${enda} "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install systemd-networkd
@@ -875,13 +875,13 @@ function installsystemnet {
   It includes support for basic network configuration through udev.
   Read more about it here: ${b}https://goo.gl/hGjd1H${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}systemd-networkd${enda}"
    sudo pacman -S --noconfirm systemd
   echo -e " ${b}systemd-networkd${enda} Was Successfully Installed"
   echo && echo -e " Run systemd-networkd From The ${b}Terminal${enda} "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Wicd
@@ -892,13 +892,13 @@ function installWicd {
   Comes with an ncurses interface,and a GTK interface wicd-gtk is available.
   Read more about it here: ${b}https://goo.gl/kNgPhE${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Wicd${enda}"
    sudo pacman -S --noconfirm wicd
   echo -e " ${b}Wicd${enda} Was Successfully Installed"
   echo && echo -e " Run wicd From The ${b}Terminal${enda} "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install OpenConnect
@@ -910,13 +910,13 @@ function installopenconnect {
   880, 1800, 2800, 3800, 7200 Series and Cisco 7301 Routers, and probably others.
   Read more about it here: ${b}https://goo.gl/sAffAW${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}OpenConnect${enda}"
    sudo pacman -S --noconfirm openconnect
   echo -e " ${b}OpenConnect${enda} Was Successfully Installed"
   echo && echo -e " Run openconnect From The ${b}Terminal${enda} "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install PPTP Client
@@ -928,13 +928,13 @@ function installpptpclient  {
   (or any PPTP-based VPN) provided by a school or workplace.
   Read more about it here: ${b}https://goo.gl/ZesX6d${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}PPTP Client${enda}"
    sudo pacman -S --noconfirm pptpclient
   echo -e " ${b}PPTP Client${enda} Was Successfully Installed"
   echo && echo -e " Run pptpclient From The ${b}Terminal${enda} "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Firefox Devoleper Edition
@@ -949,13 +949,13 @@ function installfirefoxDev  {
   web pages.
   Read more about it here: ${b}https://goo.gl/KiiRPg${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Firefox${enda}"
    sudo pacman -S --noconfirm firefox-developer-edition
   echo -e " ${b}Firefox${enda} Was Successfully Installed"
   echo && echo -e " Run Firefox From The ${b}Internet${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Firefox
@@ -970,13 +970,13 @@ function installfirefox  {
   web pages.
   Read more about it here: ${b}https://goo.gl/KiiRPg${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Firefox${enda}"
    sudo pacman -S --noconfirm firefox
   echo -e " ${b}Firefox${enda} Was Successfully Installed"
   echo && echo -e " Run Firefox From The ${b}Internet${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 
@@ -989,13 +989,13 @@ function installytgui  {
   of the popular youtube-dl written in wxPython.
   Read more about it here: ${b}https://goo.gl/twJ5Gm${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Youtube Downloader (Gui)${enda}"
    yay -S --noconfirm youtube-dl-gui-git 
   echo -e " ${b}Youtube Downloader (Gui)${enda} Was Successfully Installed"
   echo && echo -e " Run Youtube Downloader (Gui) From The ${b}Internet${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install iceweasel
@@ -1007,13 +1007,13 @@ function installice  {
   It is compatible with Linux, Windows, Android and OS X.
   Read more about it here: ${b}https://goo.gl/m8koYc${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}GNU IceCat (Iceweasel)${enda}"
    yay -S --noconfirm iceweasel 
   echo -e " ${b}GNU IceCat (Iceweasel)${enda} Was Successfully Installed"
   echo && echo -e " Run GNU IceCat (Iceweasel) From The ${b}Internet${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install VLC
@@ -1024,13 +1024,13 @@ function installvlc  {
   and framework that plays most multimedia files, and various streaming protocols.
   Read more about it here: ${b}https://goo.gl/HzVh5v${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}VLC${enda}"
    sudo pacman -S --noconfirm vlc
   echo -e " ${b}VLC${enda} Was Successfully Installed"
   echo && echo -e " Run VLC From The ${b}Multimedia${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install PulseAudio
@@ -1043,13 +1043,13 @@ function installpulse  {
   the most common deployment scenarios include PulseAudio with ALSA.
   Read more about it here: ${b}https://goo.gl/fjPX6d${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}PulseAudio${enda}"
    sudo pacman -S --noconfirm pulseaudio pulseaudio-alsa pulseaudio-equalizer
   echo -e " ${b}PulseAudio${enda} Was Successfully Installed"
   echo && echo -e " Run PulseAudio From The ${b}multimedia${enda} Menu or from Terminal ${b}pulseaudio${enda} "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install vivaldi
@@ -1060,13 +1060,13 @@ function installvivaldi  {
   Vivaldi Technologies.
   Read more about it here: ${b}https://goo.gl/cQud1m${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}vivaldi${enda}"
   yay -S --noconfirm vivaldi 
   echo -e " ${b}vivaldi${enda} Was Successfully Installed"
   echo && echo -e " Run vivaldi From The ${b}Internet${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Wifi-Menu + Dependencies
@@ -1076,13 +1076,13 @@ function installwifimenu  {
   echo -e " ${bu}wifi-menu is a service for connecting to the wifi points
   using wpa_supplicant."
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}wifi-menu${enda}"
    sudo pacman -S --noconfirm wifi-menu dialog wpa_supplicant
   echo -e " ${b}wifi-menu${enda} Was Successfully Installed"
   echo && echo -e " Run wifi-menu From The ${b}Terminal${enda}"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Gwget
@@ -1092,13 +1092,13 @@ function installgwget  {
   echo -e " ${bu}Gwget it's a download manager for the Gnome Desktop
   Read more about it here: ${b}https://goo.gl/2B9Ygo${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Gwget${enda}"
    sudo pacman -S --noconfirm gwget
   echo -e " ${b}Gwget${enda} Was Successfully Installed"
   echo && echo -e " Run Gwget From The ${b}Internet${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install KGet
@@ -1111,13 +1111,13 @@ function installkget  {
   KGet was featured by Tux Magazineand Free Software Magazine
   Read more about it here: ${b}https://goo.gl/44Yxq2${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}KGet${enda}"
    sudo pacman -S --noconfirm kdenetwork-kget
   echo -e " ${b}KGet${enda} Was Successfully Installed"
   echo && echo -e " Run KGet From The ${b}Internet${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Uget
@@ -1129,13 +1129,13 @@ function installuget  {
   and low on resources.
   Read more about it here: ${b}https://goo.gl/3RmTCz${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Uget${enda}"
    sudo pacman -S --noconfirm uget
   echo -e " ${b}Uget${enda} Was Successfully Installed"
   echo && echo -e " Run Uget From The ${b}Internet${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install curlftpfs
@@ -1146,13 +1146,13 @@ function installcurlftpfs  {
   based on FUSE and libcurl.
   Read more about it here: ${b}https://goo.gl/8492Uf${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Curl ftpfs${enda}"
    sudo pacman -S --noconfirm curlftpfs
   echo -e " ${b}Curl ftpfs${enda} Was Successfully Installed"
   echo && echo -e " Run curlftpfs From The ${b}Internet${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install qBittorrent
@@ -1164,13 +1164,13 @@ function installqbittorrent  {
   under the GNU General Public License version 2 (GPLv2).
   Read more about it here: ${b}https://goo.gl/ymzcCS${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}qBittorrent${enda}"
    sudo pacman -S --noconfirm qbittorrent qbittorrent-nox
   echo -e " ${b}qBittorrent${enda} Was Successfully Installed"
   echo && echo -e " Run qBittorrent From The ${b}Internet${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Kmail
@@ -1184,13 +1184,13 @@ function installkmail  {
   it cannot forward mail inline.
   Read more about it here: ${b}https://goo.gl/vzJMFA${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Kmail${enda}"
    sudo pacman -S --noconfirm kmail
   echo -e " ${b}Kmail${enda} Was Successfully Installed"
   echo && echo -e " Run Kmail From The ${b}Internet${enda} menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Claws Mail
@@ -1205,13 +1205,13 @@ function installclawsmail  {
   Solaris.
   Read more about it here: ${b}https://goo.gl/gmuxra${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Claws Mail${enda}"
    sudo pacman -S --noconfirm claws-mail
   echo -e " ${b}Claws Mail${enda} Was Successfully Installed"
   echo && echo -e " Run Claws Mail From The ${b}Internet${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install HexChat
@@ -1223,13 +1223,13 @@ function installhexchat  {
   Since XChat is open source, it’s perfectly legal.
   Read more about it here: ${b}https://goo.gl/BY1Lgj${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}HexChat${enda}"
    sudo pacman -S --noconfirm hexchat
   echo -e " ${b}HexChat${enda} Was Successfully Installed"
   echo && echo -e " Run HexChat From The ${b}Internet${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Dino
@@ -1241,13 +1241,13 @@ function installdino  {
   experience while having your privacy in mind.
   Read more about it here: ${b}https://dino.im${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Dino${enda}"
    yay -S --noconfirm dino-git
   echo -e " ${b}Dino${enda} Was Successfully Installed"
   echo && echo -e " Run XMPP Chat Client From The ${b}Internet${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Open Broadcaster Softwar Studio (OBS)
@@ -1267,13 +1267,13 @@ function installobs  {
   +Bilinear or lanczos3 resampling.
   Read more about it here: ${b}https://goo.gl/UDmndA${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Open Broadcaster Softwar Studio (OBS)${enda}"
    sudo pacman -S --noconfirm obs-studio
   echo -e " ${b}Open Broadcaster Softwar Studio (OBS)${enda} Was Successfully Installed"
   echo && echo -e " Run Open Broadcaster Softwar Studio (OBS) From The ${b}Multimedia${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Quassel
@@ -1287,13 +1287,13 @@ function installquassel  {
   uses the Qt framework for its user interface.
   Read more about it here: ${b}https://goo.gl/Bk93XD${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Quassel${enda}"
    sudo pacman -S --noconfirm quassel-core quassel-client quassel-monolithic
   echo -e " ${b}Quassel${enda} Was Successfully Installed"
   echo && echo -e " Run Quassel From The ${b}Internet${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Armory
@@ -1307,13 +1307,13 @@ function installarmory  {
   the internet.
   Read more about it here: ${b}https://goo.gl/UQDMTD${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Armory${enda}"
    yay -S --noconfirm armory-bin
   echo -e " ${b}Armory${enda} Was Successfully Installed"
   echo && echo -e " Run Armory From The ${b}Internet${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Bitcoin
@@ -1326,13 +1326,13 @@ function installbtc  {
   of the network to check for double-spending. Bitcoins, usually denoted by BTC.
   Read more about it here: ${b}https://goo.gl/k6hpRC${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Bitcoin ${enda}"
    sudo pacman -S --noconfirm bitcoin-daemon bitcoin-qt
   echo -e " ${b}Bitcoin ${enda} Was Successfully Installed"
   echo && echo -e " Run Bitcoin From The ${b}Internet${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 
@@ -1344,13 +1344,13 @@ function installavidemux  {
   filtering and encoding tasks.
   Read more about it here: ${b}https://goo.gl/VXdtcP${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Avidemux${enda}"
    sudo pacman -S --noconfirm avidemux-cli avidemux-qt
   echo -e " ${b}Avidemux${enda} Was Successfully Installed"
   echo && echo -e " Run Avidemux From The ${b}Multimedia${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install FFmpeg
@@ -1361,13 +1361,13 @@ function installffmpeg   {
   convert and stream audio and video.
   Read more about it here: ${b}https://goo.gl/Bi7imE${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}FFmpeg ${enda}"
    sudo pacman -S --noconfirm ffmpeg
   echo -e " ${b}FFmpeg ${enda} Was Successfully Installed"
   echo && echo -e " Run FFmpeg  From The ${b}Multimedia${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Kdenlive
@@ -1381,13 +1381,13 @@ function installkdenlive   {
   in order to built the best video tools.
   Read more about it here: ${b}https://goo.gl/JRVnzY${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Kdenlive ${enda}"
    sudo pacman -S --noconfirm kdenlive
   echo -e " ${b}Kdenlive ${enda} Was Successfully Installed"
   echo && echo -e " Run Kdenlive  From The ${b}Multimedia${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 
@@ -1404,13 +1404,13 @@ function installlifearea  {
     manager.
   Read more about it here: ${b}https://goo.gl/mt3cGV${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Liferea${enda}"
    sudo pacman -S --noconfirm liferea
   echo -e " ${b}Liferea${enda} Was Successfully Installed"
   echo && echo -e " Run Liferea From The ${b}Internet${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Krita
@@ -1424,13 +1424,13 @@ function installkrita  {
   illustrations and comics
   Read more about it here: ${b}https://goo.gl/Jiiu2y${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Krita${enda}"
    sudo pacman -S --noconfirm krita
   echo -e " ${b}Krita${enda} Was Successfully Installed"
   echo && echo -e " Run Krita From The ${b}Graphics${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 ####################################### ZARCH EDITORS ##################################################
@@ -1443,14 +1443,14 @@ function installgeary {
   by the GNOME project.
  Read more about it here: ${b}https://wiki.gnome.org/Apps/Geary${endc}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Geany${enda}"
   yay -S --noconfirm geany
   echo -e " ${b}Geany${enda} Was Successfully Installed"
   echo && echo " Run geany From ${b}Internet${endc}"
   echo -en " ${y}Press Enter To Return To Menu${endc}"
   echo
-  read input
+  read -r input
 }
 
 
@@ -1464,14 +1464,14 @@ function installemacs {
  extensions to support text editing.
  Read more about it here: ${b}https://goo.gl/2aEvFi${endc}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Emacs${enda}"
    sudo pacman -S --noconfirm emacs
   echo -e " ${b}Emacs${enda} Was Successfully Installed"
   echo && echo " Run Emacs From ${b}Development${endc}"
   echo -en " ${y}Press Enter To Return To Menu${endc}"
   echo
-  read input
+  read -r input
 }
 
 # Install GEdit
@@ -1485,13 +1485,13 @@ function installgedit {
  text such as markup languages.
  Read more about it here: ${b}https://goo.gl/PsfkTc${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}GEdit${enda}"
    sudo pacman -S --noconfirm gedit
   echo -e " ${b}GEdit${enda} Was Successfully Installed"
   echo && echo -e "Run GEdit From The ${b}Accessories${endc} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}" && echo
-  read input
+  read -r input
 }
 
 # Install Geany
@@ -1505,13 +1505,13 @@ function installgeany {
  many filetypes and has some nice features.
  Read more about it here: ${b}https://goo.gl/m8Kqqq${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Geany${enda}"
    sudo pacman -S --noconfirm geany
   echo -e " ${b}Geany${enda} Was Successfully Installed"
   echo && echo -e " Run Geany From The ${b}Development${endc} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}" && echo
-  read input
+  read -r input
 }
 
 
@@ -1524,13 +1524,13 @@ function installvim  {
   of the vi text editor (with advanced features, such as a GUI)
   Read more about it here: ${b}https://goo.gl/gRd3Ej${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}VIM${enda}"
    sudo pacman -S --noconfirm gvim
   echo -e " ${b}VIM${enda} Was Successfully Installed"
   echo && echo -e " Run VIM From The ${b}Accessories${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Kate
@@ -1545,13 +1545,13 @@ function installkate  {
   extensibility.
   Read more about it here: ${b}https://goo.gl/B9GAEe${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Kate${enda}"
    sudo pacman -S --noconfirm kate
   echo -e " ${b}Kate${enda} Was Successfully Installed"
   echo && echo -e " Run Kate From The ${b}Accessories${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 ####################################### ZARCH DEVOLEPER ##################################################
@@ -1568,13 +1568,13 @@ function installatom  {
   package manager for managing these packages and themes
   Read more about it here: ${b}https://goo.gl/Hwsk1E${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Atom${enda}"
   yay -S --noconfirm atom
   echo -e " ${b}Atom${enda} Was Successfully Installed"
   echo && echo -e " Run Atom From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Arduino
@@ -1585,13 +1585,13 @@ function installarduino {
   easy-to-use hardware and software. It's intended for anyone making interactive projects.
   Read more about it here: ${b}https://www.arduino.cc${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Arduino${enda}"
    sudo pacman -S --noconfirm arduino arduino-avr-core arduino-builder arduino-cli arduino-cli
   echo -e " ${b}Anjuta${enda} Was Successfully Installed"
   echo && echo -e " Run Arduino From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Android Studio
@@ -1603,13 +1603,13 @@ function installaptana  {
   others.
   Read more about it here: ${b}https://goo.gl/mEAcxe${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Aptana Studio${enda}"
    yay -S --noconfirm aptana-studio 
   echo -e " ${b}Aptana Studio${enda} Was Successfully Installed"
   echo && echo -e " Run Aptana Studio From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Bluefish
@@ -1620,13 +1620,13 @@ function installbluefish  {
   highlighting and support for Python plugins.
   Read more about it here: ${b}https://goo.gl/b4c2XH${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Bluefish${enda}"
    sudo pacman -S --noconfirm bluefish
   echo -e " ${b}Bluefish${enda} Was Successfully Installed"
   echo && echo -e " Run Bluefish From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Bluej
@@ -1637,13 +1637,13 @@ function installbluej  {
   and beginner purposes.
   Read more about it here: ${b}https://goo.gl/axihPM${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Bluej${enda}"
    yay -S --noconfirm bluej
   echo -e " ${b}Bluej${enda} Was Successfully Installed"
   echo && echo -e " Run Bluej From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Brackets
@@ -1656,13 +1656,13 @@ function installbrackets  {
   and is currently maintained on GitHub.
   Read more about it here: ${b}https://goo.gl/DvcBxW${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Brackets${enda}"
   yay -S --noconfirm brackets 
   echo -e " ${b}Brackets${enda} Was Successfully Installed"
   echo && echo -e " Run Brackets From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Code::Blocks
@@ -1677,13 +1677,13 @@ function installcodeblocks {
   C++, and Fortran. It has a custom build system and optional Make support.
   Read more about it here: ${b}https://goo.gl/ZbD6iN${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Code::Blocks${enda}"
    sudo pacman -S --noconfirm codeblocks
   echo -e " ${b}Code::Blocks${enda} Was Successfully Installed"
   echo && echo -e " Run Code::Blocks From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Cloud9
@@ -1695,13 +1695,13 @@ function installcloud9 {
   applications from anywhere, anytime.
   Read more about it here: ${b}https://goo.gl/iMy8m1${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Cloud9${enda}"
    yay -S --noconfirm c9.core 
   echo -e " ${b}Cloud9${enda} Was Successfully Installed"
   echo && echo -e " Run Cloud9 From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Eclipse
@@ -1712,13 +1712,13 @@ function installeclipse {
   to provide a universal development platform.
   Read more about it here: ${b}https://goo.gl/fiawqM${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Eclipse (Java)${enda}"
    sudo pacman -S --noconfirm eclipse-java
   echo -e " ${b}Eclipse (Java PHP Rust)${enda} Was Successfully Installed"
   echo && echo -e " Run Eclipse (Java) From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Editra
@@ -1730,13 +1730,13 @@ function installeditra {
   code development.
   Read more about it here: ${b}https://goo.gl/6Kf4H5${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Editra${enda}"
    yay -S --noconfirm editra 
   echo -e " ${b}Editra${enda} Was Successfully Installed"
   echo && echo -e " Run Editra From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install GitKraken
@@ -1746,13 +1746,13 @@ function installkraken {
   echo -e " ${bu}The legendary Git Client + Glo Boards for issue tracking
   Read more about it here: ${b}https://www.gitkraken.com${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Editra${enda}"
    yay -S --noconfirm gitkraken
   echo -e " ${b}Editra${enda} Was Successfully Installed"
   echo && echo -e " Run GitKraken From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 
@@ -1765,13 +1765,13 @@ function installintellij {
   with advanced refactoring features.
   Read more about it here: ${b}https://www.jetbrains.com/idea/${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}IntelliJ IDEA${enda}"
    sudo pacman -S --noconfirm intellij-idea-community-edition
   echo -e " ${b}IntelliJ IDEA${enda} Was Successfully Installed"
   echo && echo -e " Run IntelliJ IDEA From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install IntelliJIDEA
@@ -1782,13 +1782,13 @@ function installintelliju {
   with advanced refactoring features.
   Read more about it here: ${b}https://www.jetbrains.com/idea/${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}IntelliJ IDEA${enda}"
    yay -S --noconfirm intellij-idea-ultimate-edition
   echo -e " ${b}IntelliJ IDEA${enda} Was Successfully Installed"
   echo && echo -e " Run IntelliJ IDEA From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install MonoDevelop
@@ -1799,13 +1799,13 @@ function installmonodev {
   .NET frameworks.
   Read more about it here: ${b}https://goo.gl/ZuyDoY${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}MonoDevelop${enda}"
    sudo pacman -S --noconfirm monodevelop
   echo -e " ${b}MonoDevelop${enda} Was Successfully Installed"
   echo && echo -e " Run MonoDevelop From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Netbeans
@@ -1817,13 +1817,13 @@ function installnetbeans {
   and other languages.
   Read more about it here: ${b}https://goo.gl/BtS225${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Netbeans${enda}"
    sudo pacman -S --noconfirm netbeans
   echo -e " ${b}Netbeans${enda} Was Successfully Installed"
   echo && echo -e " Run Netbeans From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Ninja-IDE
@@ -1835,13 +1835,13 @@ function installninja {
   Mac OS X and Windows OSs. Used, for example, for Python development
   Read more about it here: ${b}https://goo.gl/x8bCZa${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Ninja-IDE${enda}"
    sudo pacman -S --noconfirm ninja-ide
   echo -e " ${b}Ninja-IDE${enda} Was Successfully Installed"
   echo && echo -e " Run Ninja-IDE From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install PHPStorm
@@ -1854,13 +1854,13 @@ function installphpstorm {
   error prevention and automated refactorings for PHP and JavaScript code.
   Read more about it here: ${b}https://goo.gl/RgiwTk${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}PHPStorm${enda}"
    yay -S --noconfirm phpstorm 
   echo -e " ${b}PHPStorm${enda} Was Successfully Installed"
   echo && echo -e " Run PHPStorm From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Sublime Text
@@ -1871,13 +1871,13 @@ function installsublime {
   advanced features and plugins while staying lightweight and pretty.
   Read more about it here: ${b}https://goo.gl/JaX2XU${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Sublime Text${enda}"
    sudo pacman -S --noconfirm sublime-text sublime-text-dev
   echo -e " ${b}Sublime Text ${enda} Was Successfully Installed"
   echo && echo -e " Run Sublime Text From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Visual Studio Code
@@ -1888,13 +1888,13 @@ function installvistudiocode {
   cloud applications.
   Read more about it here: ${b}https://goo.gl/paXkbK${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Visual Studio Code${enda}"
    sudo pacman -S --noconfirm visual-studio-code-bin
   echo -e " ${b}Visual Studio Code${enda} Was Successfully Installed"
   echo && echo -e " Run Visual Studio Code From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Docky
@@ -1908,13 +1908,13 @@ function installdocky {
   holds windows in their minimized state and more.
   Read more about it here: ${b}https://goo.gl/b2jBnx${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Docky${enda}"
    sudo pacman -S --noconfirm docky
   echo -e " ${b}Docky${enda} Was Successfully Installed"
   echo && echo -e " Run Docky From The ${b}Accessories${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install XFburn
@@ -1925,13 +1925,13 @@ function installxfburn {
   Xfburn is also able to burn Blu-ray discs.
   Read more about it here: ${b}https://goo.gl/gMrfwk${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}XFburn${enda}"
    sudo pacman -S --noconfirm xfburn
   echo -e " ${b}XFburn${enda} Was Successfully Installed"
   echo && echo -e " Run XFburn From The ${b}Accessories${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Foxit Reader
@@ -1941,13 +1941,13 @@ function installfoxread {
   echo -e " ${bu}PDF file reader with lot of features.
   Read more about it here: ${b}https://goo.gl/NHiF44${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Foxit Reader${enda}"
    yay -S --noconfirm foxitreader
   echo -e " ${b}Foxit Reader${enda} Was Successfully Installed"
   echo && echo -e " Run Foxit Reader From The ${b}Office${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install HTTrack (httracqt)
@@ -1958,13 +1958,13 @@ function installhttrack  {
   library, developed in C++ and based on multiplatform Qt library
   Read more about it here: ${b}https://goo.gl/8GLVbB${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}HTTrack (httracqt)${enda}"
    yay -S --noconfirm httraqt 
   echo -e " ${b}HTTrack (httracqt)${enda} Was Successfully Installed"
   echo && echo -e " Run HTTrack (httracqt) From The ${b}Internet${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Libre Office
@@ -1976,13 +1976,13 @@ function installlibreoffi  {
   is tested and used daily by a large and devoted user community
   Read more about it here: ${b}https://goo.gl/dVky6B${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Libre Office${enda}"
    sudo pacman -S --noconfirm libreoffice-fresh 
   echo -e " ${b}Libre Office${enda} Was Successfully Installed"
   echo && echo -e " Run Libre Office From The ${b}Office${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install HardInfo
@@ -1992,13 +1992,13 @@ function installhrdinfo  {
   echo -e " ${bu}information about your system hardware.
   Read more about it here: ${b}https://goo.gl/PGCRm7V${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}HardInfo${enda}"
    sudo pacman -S --noconfirm hardinfo
   echo -e " ${b}HardInfo${enda} Was Successfully Installed"
   echo && echo -e " Run HardInfo From The ${b}System${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 
@@ -2013,13 +2013,13 @@ function installandrostu  {
   when building Android apps
   Read more about it here: ${b}https://goo.gl/F6UySp${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Android Studio${enda}"
    yay -S --noconfirm android-studio 
   echo -e " ${b}Android Studio${enda} Was Successfully Installed"
   echo && echo -e " Run Android Studio From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 ####################################### ZARCH SYSTEM APPS ##################################################
@@ -2033,13 +2033,13 @@ function vmware  {
   latest Windows and Linux operating systems, and more…
   Read more: ${b}https://www.vmware.com${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}VM Ware-Workstarion${enda}"
    yay -S --noanswerdiff vmware-workstation
   echo -e " ${b}VM Ware-Workstarion${enda} Was Successfully Installed"
   echo && echo -e " Run VM Ware-Workstarion From The ${b}System Tools Apps${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Virtual Box
@@ -2052,7 +2052,7 @@ function installvirtualbox  {
   by Oracle in 2010.
   Read more about it here: ${b}https://goo.gl/wkvNLU${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Virtual Box${enda}"
    sudo pacman -S --noconfirm virtualbox virtualbox-host-dkms virtualbox-guest-iso linux-headers
    yay -S --noconfirm virtualbox-ext-oracle
@@ -2061,7 +2061,7 @@ function installvirtualbox  {
   echo -e " ${b}Virtual Box${enda} Was Successfully Installed"
   echo && echo -e " Run Virtual Box From The ${b}System${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 ####################################### ZARCH GAMING ##################################################
@@ -2074,13 +2074,13 @@ function installsteam {
   multiplayer gaming and social networking services
   Read more about it here: ${b}https://goo.gl/ottTq9${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Steam${enda}"
   pacman -S --noconfirm steam
   echo -e " ${b}Steam${enda} Was Successfully Installed"
   echo && echo -e " Run Steam From The ${b}Accessories${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Lutris
@@ -2094,13 +2094,13 @@ function installlutris {
   powered gaming machine.
   Read more about it here: ${b}https://lutris.net${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Lutris${enda}"
    sudo pacman -S --noconfirm lutris
   echo -e " ${b}Lutris${enda} Was Successfully Installed"
   echo && echo -e " Run Steam From The ${b}Accessories${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 # Install Dirscord
@@ -2112,13 +2112,13 @@ function installdiscord  {
 	and hassling with Skype. Simplify your life.
   Read more about it here: ${b}https://discordapp.com${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Discord${enda}"
   yay -S --noconfirm discord
   echo -e " ${b}Discord${enda} Was Successfully Installed"
   echo && echo -e " Run Discord From The ${b}Internet${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
-  read input
+  read -r input
 }
 
 ####################################### ZARCH BLACK ARCH ##################################################
@@ -2131,7 +2131,7 @@ function installblack {
   The repository contains 2325 tools. 
   Read more about it here: ${b}https://blackarch.org${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
-  read input
+  read -r input
   echo -e " Installing ${b}Black Arch Repository${enda}"
   sudo curl -O https://blackarch.org/strap.sh
   chmod +x strap.sh
@@ -2151,7 +2151,7 @@ function installblack {
   # To install all of the tools, run
   ${b}$ sudo pacman -S blackarch"
   echo && echo -en " ${y}Press Enter To Return To Zarch Menu${endc}"
-  read input
+  read -r input
 }
 
 ######### Programs Installations : END : ##########################
@@ -2169,7 +2169,7 @@ function downmanage {
         q)    Return To R00T MENU"
   echo
   echo -en " Choose An Option: "
-  read option
+  read -r option
   case $option in
   1) installgwget  ;;
   2) installkget ;;
@@ -2190,7 +2190,7 @@ function showvpn {
         q)    Return To R00T MENU"
   echo
   echo -en " Choose An Option: "
-  read option
+  read -r option
   case $option in
   1) installopenconnect ;;
   2) installpptpclient ;;
@@ -2213,7 +2213,7 @@ function showftptorr {
         q)    Return To R00T MENU"
   echo
   echo -en " Choose An Option: "
-  read option
+  read -r option
   case $option in
   1) installfilez ;;
   2) installgftp ;;
@@ -2240,7 +2240,7 @@ function showchat {
         q)    Return To R00T MENU"
   echo
   echo -en " Choose An Option: "
-  read option
+  read -r option
   case $option in
   1) installclawsmail ;;
   2) installkmail ;;
@@ -2267,7 +2267,7 @@ function showimg {
         q)    Return To R00T MENU"
   echo
   echo -en " Choose An Option: "
-  read option
+  read -r option
   case $option in
   1) installpinta ;;
   2) installgimp ;;
@@ -2291,7 +2291,7 @@ function showarch {
         q)    Return To R00T MENU"
   echo
   echo -en " Choose An Option: "
-  read option
+  read -r option
   case $option in
   1) installark ;;
   2) installfileroller ;;
@@ -2316,7 +2316,7 @@ function showtext {
         q)    Return To Main Menu"
   echo
   echo -en " Choose An Option: "
-  read option
+  read -r option
   case $option in
   1) installgedit ;;
   2) installgeany ;;
@@ -2347,7 +2347,7 @@ function showaudio {
         q)    Return To R00T MENU"
   echo
   echo -en " Choose An Option: "
-  read option
+  read -r option
   case $option in
   1) installaudacious ;;
   2) installamarok ;;
@@ -2385,7 +2385,7 @@ function showwebapps {
         q)    Return To R00T MENU"
   echo
   echo -en " Choose An Option: "
-  read option
+  read -r option
   case $option in
   1) installchromium ;;
   2) installchrome ;;
@@ -2433,7 +2433,7 @@ function showdevapps {
         q)    Return To R00T MENU"
   echo
   echo -en " Choose An Option: "
-  read option
+  read -r option
   case $option in
   1) installarduino ;;
   2) installaptana ;;
@@ -2471,7 +2471,7 @@ function systemtools {
         q)    Return To R00T MENU"
   echo
   echo -en " Choose An Option: "
-  read option
+  read -r option
   case $option in
   1) vmware ;;
 
@@ -2492,7 +2492,7 @@ function showgamer {
         q)    Return To R00T MENU"
   echo
   echo -en " Choose An Option: "
-  read option
+  read -r option
   case $option in
   1) installsteam ;;
   2) installlutris ;;
@@ -2514,7 +2514,7 @@ function showblack {
         q)    Return To R00T MENU"
   echo
   echo -en " Choose An Option: "
-  read option
+  read -r option
   case $option in
   1) installblack ;;
 
@@ -2532,7 +2532,7 @@ function supportzatiel {
 
 
 
-  read input
+  read -r input
 }
 
 
@@ -2563,7 +2563,7 @@ function showothapps {
         q)    Return To R00T MENU"
   echo
   echo -en " Choose An Option: "
-  read option
+  read -r option
   case $option in
   1) installskype ;;
   2) installteamviewer ;;
@@ -2604,7 +2604,7 @@ function netmanage {
         q)    Return To R00T MENU"
   echo
   echo -en " Choose An Option: "
-  read option
+  read -r option
   case $option in
   1) installconnman  ;;
   2) installnetctlr ;;
@@ -2630,7 +2630,7 @@ function showvid {
         q)    Return To ZARCH MENU"
   echo
   echo -en " Choose An Option: "
-  read option
+  read -r option
   case $option in
   1) installavidemux ;;
   2) installffmpeg ;;
@@ -2665,7 +2665,7 @@ echo -e "                               GIVE ME A TARGET
         
 echo
 echo -en " Select Option: "
-read option
+read -r option
 case $option in
 1) showtext ;;
 2) showftptorr ;;
@@ -2715,7 +2715,7 @@ function showabout {
    "Riasu OS" for their incredible support ${endc}
     "
   echo && echo -en " ${Cyan}Press Enter To Return To ZARCH MENU${endc}"
-  read input
+  read -r input
 }
 
 # Exit Zarch
