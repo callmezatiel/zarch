@@ -137,19 +137,19 @@ EOF
 pacman_update()
 {
   if pacman -Syy; then
-    return $SUCCESS
+    return "$SUCCESS"
   fi
 
   warn "Synchronizing pacman has failed. Please try manually: pacman -Syy"
 
-  return $FAILURE
+  return "$FAILURE"
 }
 
 
 pacman_upgrade()
 {
   echo 'perform full system upgrade? (pacman -Su) [Yn]:'
-  read conf < /dev/tty
+  read -r conf < /dev/tty
   case "$conf" in
     ''|y|Y) pacman -Su ;;
     n|N) warn 'some blackarch packages may not work without an up-to-date system.' ;;
