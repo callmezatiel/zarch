@@ -8,8 +8,7 @@ MIRROR_F="blackarch-mirrorlist"
 err()
 {
   echo >&2 "$(tput bold; tput setaf 1)[-] ERROR: ${*}$(tput sgr0)"
-
-  exit 1337
+  exit 1
 }
 
 # simple warning message wrapper
