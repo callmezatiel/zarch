@@ -2545,7 +2545,7 @@ function showothapps {
         2)    TeamViewer
         3)    Gnome Tweak Tool
         4)    Tilix (The best Terminal)
-        5)    Hentai
+        5)    Discord
         6)    Lifearea
         7)    Armory
         8)    Bitcoin
